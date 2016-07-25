@@ -1,0 +1,10 @@
+stages:
+  - push
+
+push:
+  image: debian
+  stage: push
+  script:
+    - git remote add github https://$USER:$PASSWORD@github.com/SvenDub/mirror-test.git
+    - git push -u github $CI_BUILD_REF_NAME
+
